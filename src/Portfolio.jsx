@@ -18,6 +18,26 @@ const Portfolio = () => {
   };
 
   const projects = [
+    // {
+    //   title: "Stock Predictor and Tracker",
+    //   description: `A website to keep track of investments and predict stock prices using machine learning.
+    //   The stock price predictor uses historical data to train a Random Forest, XGBoost, and SMA model. 
+    //   The investment tracker allows users to log their stock purchases, monitor performance, visualize gains/losses, and see the models' predictions.`,
+    //   tech: ["React Native", "Location Tracking", "Data Visualization"],
+    //   link: "",
+    //   year: "2026",
+    //   image: ""
+    // },
+    {
+      title: "Scooter Tracker and Visualizer App",
+      description: `A mobile app that records scooter rides, and visualizes trip history and usage statistics. 
+      Focuses on efficient data handling, providing insights into travel patterns, cost savings, and time savings.
+      Includes smart tracking to detect and trim the start and end of a trip, and heatmap of route frequency and places visited.`,
+      tech: ["React Native", "Location Tracking", "Data Visualization"],
+      link: "https://github.com/Chris-Ruan11/Scooter-Travel-Tracker-and-Visualizer/blob/main/README.md",
+      year: "2026",
+      image: "Scooter image.png"
+    },
     {
       title: "AI Company Sourcing Classifier & Web Automation",
       description: `Designed a program to assist lead generation, improving efficiency by 400%. 
@@ -26,16 +46,6 @@ const Portfolio = () => {
       tech: ["Python", "Machine Learning", "Data Science"],
       year: "2026",
       image: "Image for AI Company Sourcing Classifier & Web Automation.jpg"
-    },
-    {
-      title: "Scooter Tracker and Visualizer App",
-      description: `A mobile app that records scooter rides, and visualizes trip history and usage statistics. 
-      Focuses on efficient data handling, providing insights into travel patterns, cost savings, and time savings.
-      Includes smart tracking to detect and trim the start and end of a trip, and heatmap of route frequency and places visited.`,
-      tech: ["React Native", "Location Tracking", "Data Visualization"],
-      link: "",
-      year: "2026",
-      image: "Scooter image.png"
     },
     {
       title: "Fourier Epicycles Simulation",
