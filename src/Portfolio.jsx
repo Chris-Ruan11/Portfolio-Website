@@ -1,4 +1,5 @@
 /*updates later : npm run build
+use npm run dev to open
 vercel --prod */
 
 import React from 'react';
@@ -27,6 +28,16 @@ const Portfolio = () => {
       image: "Image for AI Company Sourcing Classifier & Web Automation.jpg"
     },
     {
+      title: "Scooter Tracker and Visualizer App",
+      description: `A mobile app that records scooter rides, and visualizes trip history and usage statistics. 
+      Focuses on efficient data handling, providing insights into travel patterns, cost savings, and time savings.
+      Includes smart tracking to detect and trim the start and end of a trip, and heatmap of route frequency and places visited.`,
+      tech: ["React Native", "Location Tracking", "Data Visualization"],
+      link: "",
+      year: "2026",
+      image: "Scooter image.png"
+    },
+    {
       title: "Fourier Epicycles Simulation",
       description: "Interactive tracing of 2D paths using Fourier series. Implements discrete Fourier transform to decompose user-drawn shapes into rotating epicycles.",
       tech: ["JavaScript", "p5.js", "Mathematical Modeling"],
@@ -34,6 +45,7 @@ const Portfolio = () => {
       year: "2026",
       image: "Fourier visualizer.png"
     }
+    
   ];
 
   const skills = [
@@ -176,7 +188,7 @@ const Portfolio = () => {
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.parentElement.innerHTML = `
-                            <div class="w-full aspect-video flex items-center justify-center bg-stone-100">
+                            <div class="w-full aspect-video flex items-center justify-center bg-stone-100"> // 16:9
                               <div class="text-center p-8">
                                 <div class="text-4xl font-black text-stone-400 mb-2">${index + 1}</div>
                                 <div class="text-lg font-bold text-stone-500">${project.title}</div>
@@ -311,7 +323,7 @@ const Portfolio = () => {
             © 2024 {personalInfo.name}. All rights reserved.
           </div>
           <div className="text-sm text-stone-500">
-            Designed & Built with React
+            Built with React
           </div>
         </div>
       </footer>

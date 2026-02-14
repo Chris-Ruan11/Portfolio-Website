@@ -1,16 +1,19 @@
-# React + Vite
+Scooters are awesome. I built this app to prove it to my peers.  
+It tracks scooter trips - even when the phone is locked - to show the time saved and costs saved. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Rundown:
+Press "Start Scoot" on the **Tracking tab**, then the route will be shown like the screenshot below. 
+![Live Tracking](assets/images/LiveTracking.PNG)
+**Smart detection**: for tracking, the app will automatically sense when the trip actually begins and ends, so that you can take time to settle down before pressing the stop trip button, and take some time to get ready after pressing start scoot. 
 
-Currently, two official plugins are available:
+Pressing "Stop Scoot" will bring up a celebratory page with trip statistics:
+![Completion](assets/images/TripCompletion.PNG)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The **History**tab will show all previous trips, color coded by distance:
+![History](assets/images/HistoryScreen.PNG)
 
-## React Compiler
+The **Heatmap** tab shows the routes travelled most frequently. It's also nice to visualize all the places you've been to!
+![Heatmap](assets/images/HeatmapScreen.PNG)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The **Stats** tab shows cumulative mileage and savings: 
+![Stats](assets/images/StatsScreen.PNG)
