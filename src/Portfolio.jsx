@@ -18,16 +18,16 @@ const Portfolio = () => {
   };
 
   const projects = [
-    // {
-    //   title: "Stock Predictor and Tracker",
-    //   description: `A website to keep track of investments and predict stock prices using machine learning.
-    //   The stock price predictor uses historical data to train a Random Forest, XGBoost, and SMA model. 
-    //   The investment tracker allows users to log their stock purchases, monitor performance, visualize gains/losses, and see the models' predictions.`,
-    //   tech: ["React Native", "Location Tracking", "Data Visualization"],
-    //   link: "",
-    //   year: "2026",
-    //   image: ""
-    // },
+    {
+      title: "Stock Predictor and Tracker",
+      description: `A website to keep track of investments and predict stock prices using machine learning.
+     The stock price predictor uses historical data to train a Random Forest, XGBoost, and SMA model. 
+     The investment tracker allows users to log their stock purchases, monitor performance, visualize gains/losses, and see the models' predictions.`,
+      tech: ["Python", "Next.js", "Machine Learning"],
+      link: "https://stock-prediction-and-portfolio-trac-nu.vercel.app/",
+      year: "2026",
+      image: "Stock site.png"
+    },
     {
       title: "Scooter Tracker and Visualizer App",
       description: `A mobile app that records scooter rides, and visualizes trip history and usage statistics. 
@@ -43,7 +43,7 @@ const Portfolio = () => {
       description: `Designed a program to assist lead generation, improving efficiency by 400%. 
         The NLP and machine-learning system scrapes and cleans websites, transforms text into numerical features using TF-IDF vectorization, and trains a supervised Logistic Regression model to predict relevance to determine industry fit. 
         Additionally, the program automatically extracts revenue data based on search criteria using Selenium web automation.`, // Noise removal by stripping html tags for footers, symbols, normalizing text, standardize length;
-      tech: ["Python", "Machine Learning", "Data Science"],
+      tech: ["Python", "NLP", "Data Science"],
       year: "2026",
       image: "Image for AI Company Sourcing Classifier & Web Automation.jpg"
     },
@@ -55,7 +55,7 @@ const Portfolio = () => {
       year: "2026",
       image: "Fourier visualizer.png"
     }
-    
+
   ];
 
   const skills = [
