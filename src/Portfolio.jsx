@@ -21,7 +21,7 @@ const Portfolio = () => {
     {
       title: "Stock Predictor and Tracker",
       description: `A website to keep track of investments and predict stock prices using a Random Forest, XGBoost, and SMA model trained on hisotrical data. 
-     The investment tracker allows users to log their stock purchases, monitor performance, visualize gains/losses, and see the models' predictions.`,
+     The investment tracker allows users to log their stock purchases, monitor performance, visualize gains/losses, and see news sentiment`,
       tech: ["Python", "Next.js", "Machine Learning"],
       link: "https://stock-prediction-and-portfolio-trac-nu.vercel.app/",
       year: "2026",
