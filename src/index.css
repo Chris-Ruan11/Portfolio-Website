@@ -5,6 +5,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Scales every rem-based size (text, spacing, max widths) — lower = more zoomed out */
+    font-size: 75%;
   }
   
   body {
