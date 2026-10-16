@@ -107,6 +107,39 @@ const Portfolio = () => {
 
   ];
 
+  const research = [
+    {
+      title: "Minimax Score Combination for Diffusion Sampling Toward Several Targets",
+      company: "BruinML",
+      description: `Diffusion models (the technology behind many AI image generators) can blend several trained models together while generating, but how much weight each one gets is usually picked by hand or by trial and error. If you want the output to come out as close as possible to *all* 
+      of the targets at once, what's the best way to choose those weights?
+
+      We proved an exact formula for how far the generated result ends up from each target, which turns choosing the best weights into an optimization problem that can be solved efficiently. In tests, our weights reached the true optimum, while a common existing approach did worse than weights picked at 
+      random.
+      
+      Currently under review for ALT 2027`,
+      year: "2026",
+      // link: "https://...",       // optional: paper or project page
+      // linkLabel: "Read paper",   // optional: link text (defaults to "View live site")
+      // image: "research.png",     // optional: figure from public/
+      pdf: "/418_Minimax_Score_Combination_.pdf",         // optional: embeds the PDF instead of an image
+    },
+    {
+      title: "Autoparametric Resonance in Elastic Pendulums",
+      company: "S.T. Yau High School Science Award",
+      description: `Hang a weight from a spring and pull it straight down. It simply bobs up and down, as expected - except for some particular lengths, it swings side to side on its own, like a pendulum, then returns to bouncing, trading energy between the two motions with no outside push.
+
+      We derivy why from first principles, using the Lagrangian and finding the conditions for this resonance to be related to the ratio of the spring and pendulum frequencies. We used that to predict the length that makes the effect strongest, then confirmed it with video-tracked experiments, which existing studies mostly lacked.
+
+      Awarded local 1st place, Asia honorable mention`,
+      year: "2024",
+      // link: "https://...",       // optional: paper or project page
+      // linkLabel: "Read paper",   // optional: link text (defaults to "View live site")
+      // image: "research.png",     // optional: figure from public/
+      pdf: "/Phy_109_Research_Report (1) (1) (1).pdf",         // optional: embeds the PDF instead of an image
+    },
+  ];
+
   const experience = [
     {
       title: "Quantitative Research Intern",
@@ -149,8 +182,9 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="font-bold text-xl">{personalInfo.name}</div>
           <div className="flex gap-6">
-            <a href="#experience" className="hover:text-stone-600 transition-colors">Experience</a>
+            <a href="#experience" className="hover:text-stone-600 transition-colors">Work Experience</a>
             <a href="#work" className="hover:text-stone-600 transition-colors">Projects</a>
+            <a href="#research" className="hover:text-stone-600 transition-colors">Research</a>
             <a href="#about" className="hover:text-stone-600 transition-colors">About</a>
             <a href="#contact" className="hover:text-stone-600 transition-colors">Contact</a>
           </div>
@@ -393,6 +427,90 @@ const Portfolio = () => {
                         }}
                       />
                     </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research Section */}
+      <section id="research" className="px-6 md:px-12 py-24 bg-stone-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-black mb-16">Research</h2>
+
+          <div className="space-y-20">
+            {research.map((item, index) => (
+              <div key={index} className="border-b border-stone-200 pb-12 last:border-0">
+                <div className="grid md:grid-cols-12 gap-8">
+                  <div className="md:col-span-2">
+                    <span className="text-sm font-mono text-stone-500">{item.year}</span>
+                  </div>
+
+                  <div className="md:col-span-10 space-y-6">
+                    <div>
+                      {item.link ? (
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="block group">
+                          <h3 className="text-4xl font-black mb-2 flex items-center gap-3">
+                            {item.title}
+                            <ArrowUpRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </h3>
+                        </a>
+                      ) : (
+                        <h3 className="text-4xl font-black mb-2">{item.title}</h3>
+                      )}
+                      {item.company && (
+                        <div className="text-xl font-bold text-stone-600">{item.company}</div>
+                      )}
+                    </div>
+
+                    <div className="text-lg text-stone-600 leading-relaxed space-y-4">
+                      {item.description.split(/\n\s*\n/).map((para, i) => (
+                        <p key={i}>{renderLinks(para)}</p>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap gap-3">
+                      {item.tech?.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-4 py-2 border border-stone-900 text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-bold border-b-2 border-stone-900 hover:text-stone-600 hover:border-stone-600 transition-colors"
+                      >
+                        {item.linkLabel || "View live site"}
+                        <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    )}
+
+                    {item.pdf ? (
+                      <div className="border-2 border-stone-900 overflow-hidden bg-white">
+                        <iframe
+                          src={`${item.pdf}#toolbar=0&navpanes=0&view=FitH`}
+                          title={item.title}
+                          className="w-full aspect-[612/792]"
+                        />
+                      </div>
+                    ) : item.image && (
+                      <div className="border-2 border-stone-900 overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-auto bg-white"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
