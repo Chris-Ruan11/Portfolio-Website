@@ -29,12 +29,27 @@ const Portfolio = () => {
     // },
     {
       title: "Catan Bot",
-      description: `An AlphaZero-style AI that plays 1v1 Catan to 15 victory points. Each move is chosen by a Monte Carlo tree search guided by a neural network with policy and value heads,
+      description: `I got quite competitive playing catan with my friends. At each move, its often ambigous what the best move is, and I thought it would be rather awesome to have a super-human 'coach' for every move. There was surprisingly
+      little existing proejcts done on Catan, and while building, I constantly see why. There are so, so many inputs to the game, and each move's impact may be hard to see until much later. 
+
+      This project started as an AlphaZero-style AI that plays 1v1 Catan, where each move is chosen by a Monte Carlo tree search guided by a neural network with policy and value heads,
         and the bot improves by playing full games against itself, turning search visit counts and final scores into training labels for the next generation.
-        The current champion wins 51% of 200 games against catanatron's AlphaBeta bot, and tuning the search's exploration constant gave a +50 ELO gain.`,
+        
+      My best version so far uses the architecture below (with hand-made features), and wins 51% of 200 games against catanatron's AlphaBeta bot, and tuning the search's exploration constant gave a +50 ELO gain.
+        I'm currently testing GNN and transformer architectures, with several other design elements such as when to combine the game state (eg hand size, longest road length) with board state (eg settlement spots occupied).`,
       tech: ["Python", "PyTorch", "Reinforcement Learning", "MCTS"],
       year: "2026",
       image: "Catan loop.png",
+      fullImage: true
+    },
+    {
+      title: "AI and Data Scientist — Personalized Movie Recommendation",
+      description: `Somehow, I never found Netflix or Spotify algorithms that effective. I wanted to look deeper into how these work, and whether some personalized improvements could be made.
+
+      A personalized movie recommendation system built on MovieLens user-rating data and movie metadata. Uses item-based collaborative filtering and cosine similarity to identify relationships between movies, predict user preferences for unseen titles, and rank personalized recommendations.`,
+      tech: ["Collaborative Filtering", "Rating Matrix Factorization", "User–Item Rating Matrices", "Data Visualization"],
+      year: "2026",
+      image: "",
       fullImage: true
     },
     {
@@ -49,9 +64,11 @@ const Portfolio = () => {
     },
     {
       title: "Scooter Tracker and Visualizer App",
-      description: `A mobile app that records scooter rides, and visualizes trip history and usage statistics. 
-      Focuses on efficient data handling, providing insights into travel patterns, cost savings, and time savings.
-      Includes smart tracking to detect and trim the start and end of a trip, and heatmap of route frequency and places visited.`,
+      description: `Many at UCLA laugh, frown, or roll their eyes at owning a scooter, while others say its simply too expensive. But every single day I'm convinced this my scooter is totally worth it, and I wanted to prove it. 
+      
+      This is a mobile app that records scooter rides, and visualizes trip history and usage statistics. 
+      It focuses on efficient data handling, providing insights into travel patterns, cost savings, and time savings - such as cost saved compared to shared scooter services (Bird), and time saved compared to walking (and in terms of $, if you value your time).
+      Includes smart tracking to detect and trim the start and end of a trip, and heatmap of route frequency and places visited to encourage exploration on near-free transportation.`,
       tech: ["React Native", "Location Tracking", "Data Visualization"],
       link: "https://github.com/Chris-Ruan11/Scooter-Travel-Tracker-and-Visualizer/blob/main/README.md",
       linkLabel: "View on GitHub",
