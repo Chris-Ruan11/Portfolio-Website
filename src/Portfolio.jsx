@@ -5,6 +5,25 @@ vercel --prod */
 import React from 'react';
 import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight } from 'lucide-react';
 
+// Turns [text](url) inside a description into a clickable link
+const renderLinks = (text) =>
+  text.split(/(\[[^\]]+\]\([^)]+\))/).map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    return match ? (
+      <a
+        key={i}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 underline hover:text-blue-800"
+      >
+        {match[1]}
+      </a>
+    ) : (
+      part
+    );
+  });
+
 const Portfolio = () => {
   // Personal info, projects, and skills
   const personalInfo = {
@@ -44,18 +63,20 @@ const Portfolio = () => {
     },
     {
       title: "AI and Data Scientist — Personalized Movie Recommendation",
-      description: `Somehow, I never found Netflix or Spotify algorithms that effective. I wanted to look deeper into how these work, and whether some personalized improvements could be made.
+      description: `Somehow, I never found Netflix or Spotify algorithms that effective. I wanted to look deeper into how these work, and whether some personalized improvements could be made. This also gives a nice, small incentive for me to keep my IMDB ratings up to date.
 
       A personalized movie recommendation system built on MovieLens user-rating data and movie metadata. Uses item-based collaborative filtering and cosine similarity to identify relationships between movies, predict user preferences for unseen titles, and rank personalized recommendations.`,
       tech: ["Collaborative Filtering", "Rating Matrix Factorization", "User–Item Rating Matrices", "Data Visualization"],
       year: "2026",
-      image: "",
+      image: "Movie recs.png",
       fullImage: true
     },
     {
       title: "Backend Developer — Fitty App",
       company: "Creative Labs",
-      description: `A social outfit-tracking app where users log outfits, see friends' posts, and get AI-suggested outfits from their own closet.
+      description: `A group project for [UCLA's Creative Labs](https://www.creativelabsucla.com/)
+      
+      A social outfit-tracking app where users log outfits, see friends' posts, and get AI-suggested outfits from their own closet.
         Uploaded photos are auto-tagged by multimodal LLM classification, and outfit suggestions are scored on weather, diversity, and coherence.`,
       tech: ["Backend", "Multimodal LLMs", "Mobile App"],
       year: "2026",
@@ -230,9 +251,11 @@ const Portfolio = () => {
                       )}
                     </div>
 
-                    <p className="text-lg text-stone-600 leading-relaxed">
-                      {job.description}
-                    </p>
+                    <div className="text-lg text-stone-600 leading-relaxed space-y-4">
+                      {job.description.split(/\n\s*\n/).map((para, i) => (
+                        <p key={i}>{renderLinks(para)}</p>
+                      ))}
+                    </div>
 
                     <div className="flex flex-wrap gap-3">
                       {job.tech.map((tech, i) => (
@@ -317,9 +340,11 @@ const Portfolio = () => {
                       <div className="text-xl font-bold text-stone-600 -mt-4">{project.company}</div>
                     )}
 
-                    <p className="text-lg text-stone-600 leading-relaxed">
-                      {project.description}
-                    </p>
+                    <div className="text-lg text-stone-600 leading-relaxed space-y-4">
+                      {project.description.split(/\n\s*\n/).map((para, i) => (
+                        <p key={i}>{renderLinks(para)}</p>
+                      ))}
+                    </div>
 
                     <div className="flex flex-wrap gap-3">
                       {project.tech.map((tech, i) => (
