@@ -5,24 +5,34 @@ vercel --prod */
 import React from 'react';
 import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight } from 'lucide-react';
 
-// Turns [text](url) inside a description into a clickable link
+// Formatting inside a description:
+// [text](url) -> link, **text** -> bold, __text__ -> underline, *text* -> italics
 const renderLinks = (text) =>
-  text.split(/(\[[^\]]+\]\([^)]+\))/).map((part, i) => {
-    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    return match ? (
-      <a
-        key={i}
-        href={match[2]}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 underline hover:text-blue-800"
-      >
-        {match[1]}
-      </a>
-    ) : (
-      part
-    );
-  });
+  text
+    .split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*\n]+\*\*|__[^_\n]+__|\*[^*\n]+\*)/)
+    .map((part, i) => {
+      const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (link) {
+        return (
+          <a
+            key={i}
+            href={link[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            {link[1]}
+          </a>
+        );
+      }
+      const bold = part.match(/^\*\*([^*\n]+)\*\*$/);
+      if (bold) return <strong key={i} className="font-bold text-stone-900">{bold[1]}</strong>;
+      const underline = part.match(/^__([^_\n]+)__$/);
+      if (underline) return <u key={i}>{underline[1]}</u>;
+      const italic = part.match(/^\*([^*\n]+)\*$/);
+      if (italic) return <em key={i}>{italic[1]}</em>;
+      return part;
+    });
 
 const Portfolio = () => {
   // Personal info, projects, and skills
@@ -144,9 +154,11 @@ const Portfolio = () => {
     {
       title: "Quantitative Research Intern",
       company: "Nine Masts Capital",
-      description: `Took two systematic trading research projects through to a statistically validated verdict:
-        an EMA-channel breakout day-trading strategy on SHFE rebar futures with an investigation into overfitting and backtest validation,
-        and a cross-sectional intraday factor research project testing 860+ feature hypotheses across 58 Chinese commodities futures.`,
+      description: `Worked on two systematic trading research projects to a statistically validated verdict on Chinese commodity futures:
+        
+      First, processing over 5 billion snapshots of raw data to discover intraday strategies. I moved forward with an EMA-channel breakout strategy, and performing parameter selection. With strong results, I wrote tests for the deflated sharpe ratio and walk forward analysis, discovering regime-dependent overfitting.
+        
+      Second, a cross-sectional intraday factor research project testing 860+ feature hypotheses across 58 Chinese commodities futures. Utilized a Romano–Wolf stepwise multiple-testing filter and yearly stability filter to combine 43 features, reaching a 1.2 Sharpe.`,
       tech: ["Python", "Quantitative Research", "Backtesting", "Statistics"],
       year: "2026",
       pdf: "/internship_research_summary.pdf"
@@ -156,7 +168,9 @@ const Portfolio = () => {
       company: "UCLA Statistics",
       description: `A multi-table AI reasoning agent that turns natural-language questions into real, traceable analyses across spreadsheets.
         Maintains a living graph of derived tables so every join, filter, and aggregation stays inspectable, and runs computations as real code on the data rather than guessing numbers.
-        Every tool call and transformation is shown as a traceable step, with intermediate tables saved for follow-up questions.`,
+        Every tool call and transformation is shown as a traceable step, with intermediate tables saved for follow-up questions.
+        
+        ChatGPT/Claude MCPs established, and preparing to deliver to clients related to biostatistics and pharmacy statistics. Led by UCLA professor Guang Cheng`,
       tech: ["AI Agents", "LLMs", "Data Analysis"],
       year: "2026",
       link: "https://table-reasoning.vercel.app/",
