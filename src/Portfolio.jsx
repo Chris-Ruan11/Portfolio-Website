@@ -541,10 +541,11 @@ const Portfolio = () => {
           <div className="max-w-3xl">
             <div className="text-lg text-stone-300 leading-relaxed space-y-4">
               <p>
-                I grew up in Hong Kong, always enjoying STEM subjects and engaging in project-based work. I found a passion for quantitative finance through my recent internship at Nine Masts Capital - I love exploring new ideas, and am always looking for ways to tackle interesting problems.
+                I grew up in Hong Kong, always enjoying STEM subjects and engaging in project-based work. I love exploring new ideas, and am always looking for interesting problems to work on.
+                {/* I found a passion for quantitative finance through my recent internship at Nine Masts Capital - I love exploring new ideas, and am always looking for ways to tackle interesting problems. */}
               </p>
               <p>
-                Additionally, I love snowboarding, poker, and cooking. At UCLA, you'll find me as a tour guide, gardening club lead, calisthenics club memeber, and at Bruin Asset Management. 
+                Additionally, I love snowboarding, surfing, poker, and cooking. At UCLA, you'll find me as a tour guide, leading gardening workshops for the club DIG, or working on my handstand pushup at the calisthenics club Bruin Street Workout. I'm also involved with the clubs Bruin Asset Management, Bruin Algorithmic Traders, and Bruin Quant Traders. 
               </p>
             </div>
           </div>
