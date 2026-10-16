@@ -29,7 +29,7 @@ const Portfolio = () => {
   const personalInfo = {
     name: "Huajun (Chris) Ruan",
     title: "Mathematics of Computation @ UCLA",
-    bio: "Please find details of my work and projects below. I am a student who is passionate about finance and mathematics, and super eager to learn.",
+    bio: "Please find details of my work and projects below. I'm always committed and eager to take on new projects, and excited to learn.",
     email: "chjruan@ucla.edu",
     github: "https://github.com/Chris-Ruan11",
     linkedin: "https://linkedin.com/in/ChrisRuan",
@@ -65,7 +65,7 @@ const Portfolio = () => {
       title: "AI and Data Scientist — Personalized Movie Recommendation",
       description: `Somehow, I never found Netflix or Spotify algorithms that effective. I wanted to look deeper into how these work, and whether some personalized improvements could be made. This also gives a nice, small incentive for me to keep my IMDB ratings up to date.
 
-      A personalized movie recommendation system built on MovieLens user-rating data and movie metadata. Uses item-based collaborative filtering and cosine similarity to identify relationships between movies, predict user preferences for unseen titles, and rank personalized recommendations.`,
+      A personalized movie recommendation system built on MovieLens user-rating data and movie metadata. Uses item-based collaborative filtering and cosine similarity to identify relationships between movies, predict user preferences for unseen titles, and rank personalized recommendations. The top 10 recommendations to me are given below`,
       tech: ["Collaborative Filtering", "Rating Matrix Factorization", "User–Item Rating Matrices", "Data Visualization"],
       year: "2026",
       image: "Movie recs.png",
