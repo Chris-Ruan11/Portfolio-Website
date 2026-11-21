@@ -186,7 +186,7 @@ const Portfolio = () => {
         The NLP and machine-learning system scrapes and cleans websites, transforms text into numerical features using TF-IDF vectorization, and trains a supervised Logistic Regression model to predict relevance to determine industry fit.
         Additionally, the program automatically extracts revenue data based on search criteria using Selenium web automation.
         
-        This program noticably improved my workflow, and allowed for a more organized, convenient workflow to work on my cold calls, which became more effective, and I was credited with one deal.`, // Noise removal by stripping html tags for footers, symbols, normalizing text, standardize length;
+        This program noticeably improved my workflow, and allowed for a more organized, convenient workflow to work on my cold calls, which became more effective, and I was credited with one deal.`, // Noise removal by stripping html tags for footers, symbols, normalizing text, standardize length;
       tech: ["Python", "NLP", "Data Science"],
       year: "2026",
       image: "Image for AI Company Sourcing Classifier & Web Automation.jpg"
