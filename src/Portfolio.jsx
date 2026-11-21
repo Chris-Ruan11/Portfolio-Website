@@ -156,9 +156,9 @@ const Portfolio = () => {
       company: "Nine Masts Capital",
       description: `Worked on two systematic trading research projects to a statistically validated verdict on Chinese commodity futures:
         
-      First, processing over 5 billion snapshots of raw data to discover intraday strategies. I moved forward with an EMA-channel breakout strategy, and performing parameter selection. With strong results, I wrote tests for the deflated sharpe ratio and walk forward analysis, discovering regime-dependent overfitting.
+      First, processing over 5 billion snapshots of raw data to discover intraday strategies. I moved forward with an EMA-channel breakout strategy, and performing parameter selection. With strong results, I wrote tests for the deflated sharpe ratio and walk forward analysis, discovering strong but regime-dependent returns.
         
-      Second, a cross-sectional intraday factor research project testing 860+ feature hypotheses across 58 Chinese commodities futures. Utilized a Romano–Wolf stepwise multiple-testing filter and yearly stability filter to combine 43 features, reaching a 1.2 Sharpe.`,
+      Second, compiling those insights for a cross-sectional intraday factor research project testing 860+ feature hypotheses across 58 Chinese commodities futures. Utilized a Romano–Wolf stepwise multiple-testing filter and yearly stability filter to combine 43 features, reaching a 1.2 Sharpe.`,
       tech: ["Python", "Quantitative Research", "Backtesting", "Statistics"],
       year: "2026",
       pdf: "/internship_research_summary.pdf"
@@ -166,10 +166,13 @@ const Portfolio = () => {
     {
       title: "Realy (Multi-table Agent)",
       company: "UCLA Statistics",
-      description: `A multi-table AI reasoning agent that turns natural-language questions into real, traceable analyses across spreadsheets.
-        Maintains a living graph of derived tables so every join, filter, and aggregation stays inspectable, and runs computations as real code on the data rather than guessing numbers.
-        Every tool call and transformation is shown as a traceable step, with intermediate tables saved for follow-up questions.
+      description: `*This is a multi-table AI reasoning agent that turns natural-language questions into real, traceable analyses across spreadsheets.*
+        *Maintains a living graph of derived tables so every join, filter, and aggregation stays inspectable, and runs computations as real code on the data rather than guessing numbers.*
+        *Every tool call and transformation is shown as a traceable step, with intermediate tables saved for follow-up questions.*
         
+        I worked on improving the efficiency - in terms of response time, token usage, and file sizing. This was done through methods such as implementing frontend artifacts and editing the tool call procedure, each tested and code reviewed. 
+        Another large part was error tracking, to improve the development process via user testing. This was integrated by placing logs and errors at each step, from AWS, LangSmith, Supabase, and the frontend. 
+
         ChatGPT/Claude MCPs established, and preparing to deliver to clients related to biostatistics and pharmacy statistics. Led by UCLA professor Guang Cheng`,
       tech: ["AI Agents", "LLMs", "Data Analysis"],
       year: "2026",
@@ -179,9 +182,11 @@ const Portfolio = () => {
     {
       title: "AI Company Sourcing Classifier & Web Automation",
       company: "Caprae Capital",
-      description: `Designed a program to assist lead generation, improving efficiency by 400%.
+      description: `Along with a team of interns, I was responsible for lots of lead generation and research-based tasks for the private equity firm. I designed a program to assist in this work, improving efficiency by 400%.
         The NLP and machine-learning system scrapes and cleans websites, transforms text into numerical features using TF-IDF vectorization, and trains a supervised Logistic Regression model to predict relevance to determine industry fit.
-        Additionally, the program automatically extracts revenue data based on search criteria using Selenium web automation.`, // Noise removal by stripping html tags for footers, symbols, normalizing text, standardize length;
+        Additionally, the program automatically extracts revenue data based on search criteria using Selenium web automation.
+        
+        This program noticably improved my workflow, and allowed for a more organized, convenient workflow to work on my cold calls, which became more effective, and I was credited with one deal.`, // Noise removal by stripping html tags for footers, symbols, normalizing text, standardize length;
       tech: ["Python", "NLP", "Data Science"],
       year: "2026",
       image: "Image for AI Company Sourcing Classifier & Web Automation.jpg"
